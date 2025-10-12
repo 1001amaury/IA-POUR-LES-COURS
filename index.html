@@ -1,120 +1,274 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IA pour les cours</title>
-  <link rel="icon" href="logo.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IA pour les cours — Guide pratique</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Guide clair pour utiliser l'IA en cours : éthique, prompts, exemples, entraînement et préparation aux contrôles." />
+
   <style>
     * {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
-      font-family: "Montserrat", sans-serif;
     }
 
     body {
-      background-color: #f4f4f9;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 25px;
-    }
-
-    header img {
-      width: 80px;
-      height: 80px;
-      margin-bottom: 10px;
-    }
-
-    h1 {
-      font-size: 1.8rem;
-      color: #0077ff;
-    }
-
-    section {
-      background: white;
-      width: 100%;
-      max-width: 500px;
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    section h2 {
-      font-size: 1.2rem;
-      color: #0077ff;
-      margin-bottom: 10px;
-    }
-
-    section p {
-      font-size: 0.95rem;
+      margin: 0;
+      font-family: "Montserrat", sans-serif;
+      background: #f6f7fb;
+      color: #222;
       line-height: 1.5;
     }
 
-    footer {
+    header.hero {
+      background: linear-gradient(135deg, #0066ff, #0099ff);
+      color: white;
       text-align: center;
-      font-size: 0.85rem;
-      color: #777;
-      margin-top: 20px;
+      padding: 50px 20px;
     }
 
+    .hero h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .subtitle {
+      margin-top: 10px;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 18px;
+      margin: 20px 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      color: #0070ff;
+      margin-bottom: 10px;
+    }
+
+    ul, ol {
+      padding-left: 20px;
+    }
+
+    .prompt {
+      background: #f0f3f9;
+      border-radius: 8px;
+      padding: 10px;
+      font-family: monospace;
+      font-size: 0.9rem;
+      overflow-x: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 10px 14px;
+      font-size: 0.9rem;
+      border: none;
+      background: #0070ff;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn:active {
+      background: #005fd6;
+    }
+
+    details summary {
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 6px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .small {
+      font-size: 0.9rem;
+    }
+
+    footer, #footer {
+      text-align: center;
+      color: #555;
+    }
+
+    /* 🔹 RESPONSIVE SMARTPHONE 🔹 */
     @media (max-width: 600px) {
-      h1 {
+      header.hero {
+        padding: 40px 15px;
+      }
+
+      .hero h1 {
         font-size: 1.6rem;
       }
 
-      section {
-        padding: 12px;
+      .subtitle {
+        font-size: 0.95rem;
       }
 
-      section p {
-        font-size: 0.9rem;
+      .container {
+        padding: 0 10px;
+      }
+
+      .card {
+        padding: 15px;
+        border-radius: 10px;
+        margin: 15px 0;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      h2 {
+        font-size: 1.1rem;
+      }
+
+      .prompt {
+        font-size: 0.85rem;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="Logo IA pour les cours" />
-    <h1>IA pour les cours</h1>
+  <header class="hero">
+    <div class="container">
+      <h1>🤖 IA pour les cours</h1>
+      <p class="subtitle">Utiliser l'IA efficacement, éthiquement et sans tricher.</p>
+    </div>
   </header>
 
-  <section>
-    <h2>Pourquoi utiliser l’IA ?</h2>
-    <p>L’intelligence artificielle permet de gagner du temps, mieux comprendre les cours et apprendre plus efficacement.</p>
-  </section>
+  <main class="container">
+    <section id="why" class="card">
+      <h2>📚 Pourquoi utiliser l'IA</h2>
+      <ul>
+        <li>Résumé rapide de fiches ou textes longs.</li>
+        <li>Explication pas-à-pas de concepts compliqués.</li>
+        <li>Génération d'exemples d'exercices et corrections.</li>
+        <li>Aide à la structuration d'un devoir (plan + arguments).</li>
+        <li>Entraînement personnalisé : l'IA peut simuler des questions de contrôle pour t'entraîner, corriger tes erreurs et t’aider à progresser avant l’évaluation.</li>
+        <li>Moins de stress : en s’exerçant avec des sujets proches de ceux du professeur, tu arrives préparé, confiant et sans panique le jour du contrôle.</li>
+        <li>Adaptation au professeur : l’IA peut s’ajuster au style de ton enseignant (type de questions, exigences, structure des réponses).</li>
+      </ul>
+    </section>
 
-  <section>
-    <h2>Entraînement personnalisé</h2>
-    <p>L’IA peut créer des exercices sur mesure, adaptés à ton niveau et à tes erreurs. Elle t’entraîne à ton rythme pour mieux te préparer.</p>
-  </section>
+    <section id="rules" class="card">
+      <h2>⚖️ Règles & éthique</h2>
+      <ol>
+        <li>Ne jamais rendre un travail entièrement généré sans l'indiquer.</li>
+        <li>Vérifier les faits et calculs (IA se trompe).</li>
+        <li>Respecter le règlement scolaire : demander au prof si doute.</li>
+        <li>Protéger les données personnelles (pas d'éléments sensibles).</li>
+      </ol>
+    </section>
 
-  <section>
-    <h2>Moins de stress avant les contrôles</h2>
-    <p>Grâce à des simulations et des corrections rapides, tu arrives plus préparé et donc plus confiant.</p>
-  </section>
+    <section id="how" class="card">
+      <h2>🛠️ Comment formuler un bon prompt</h2>
+      <p>Structure simple : contexte + tâche précise + format attendu + contraintes.</p>
+      <pre class="prompt">Contexte : Je suis en 2nde, sujet = révolution industrielle.
+Tâche : Résume en 6 points clairs.
+Format : bullet points, 1 phrase par point.
+Contraintes : pas plus de 60 mots par point.</pre>
+      <button class="btn" data-copy="Contexte : Je suis en 2nde, sujet = révolution industrielle.\nTâche : Résume en 6 points clairs.\nFormat : bullet points, 1 phrase par point.\nContraintes : pas plus de 60 mots par point.">Copier l'exemple</button>
+    </section>
 
-  <section>
-    <h2>Adaptation au professeur</h2>
-    <p>L’IA peut analyser le style d’exigence du professeur et t’aider à répondre exactement à ses attentes.</p>
-  </section>
+    <section id="templates" class="card">
+      <h2>✍️ Templates rapides</h2>
+      <details>
+        <summary>Résumé de cours</summary>
+        <pre class="prompt">Résume ce texte en 5 points essentiels, chacun en 1 phrase.</pre>
+        <button class="btn" data-copy="Résume ce texte en 5 points essentiels, chacun en 1 phrase.">Copier</button>
+      </details>
 
-  <section>
-    <h2>Éthique et responsabilité</h2>
-    <p>Utiliser l’IA, ce n’est pas tricher : c’est apprendre à mieux apprendre. L’important est de comprendre, pas de copier.</p>
-  </section>
+      <details>
+        <summary>Plan pour un devoir</summary>
+        <pre class="prompt">Propose un plan en 3 parties pour un sujet : "Les causes de la Première Guerre mondiale".</pre>
+        <button class="btn" data-copy="Propose un plan en 3 parties pour un sujet : 'Les causes de la Première Guerre mondiale'.">Copier</button>
+      </details>
 
-  <footer>
-    <p>Projet EMC – Utilisation responsable de l’IA © 2025</p>
-  </footer>
+      <details>
+        <summary>Explication pas-à-pas (math)</summary>
+        <pre class="prompt">Explique la résolution de x² - 5x + 6 = 0, étape par étape, sans sauter d'étapes.</pre>
+        <button class="btn" data-copy="Explique la résolution de x² - 5x + 6 = 0, étape par étape, sans sauter d'étapes.">Copier</button>
+      </details>
+
+      <details>
+        <summary>Simulation de contrôle</summary>
+        <pre class="prompt">Génère un mini contrôle de 5 questions sur le thème "les Lumières", puis corrige mes réponses et explique mes erreurs.</pre>
+        <button class="btn" data-copy="Génère un mini contrôle de 5 questions sur le thème 'les Lumières', puis corrige mes réponses et explique mes erreurs.">Copier</button>
+      </details>
+    </section>
+
+    <section id="dosdonts" class="card">
+      <h2>✅ / ❌ À faire / Ne pas faire</h2>
+      <div class="grid">
+        <div>
+          <h3>✅ Faire</h3>
+          <ul>
+            <li>Vérifier et corriger la sortie.</li>
+            <li>Utiliser l'IA pour reformuler, non pour tricher.</li>
+            <li>Ajouter des sources et citations si tu t'appuies dessus.</li>
+            <li>Demander à l’IA de s’adapter au style ou attentes du professeur.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>❌ Ne pas faire</h3>
+          <ul>
+            <li>Rendre un texte généré sans adaptation.</li>
+            <li>Donner des données privées.</li>
+            <li>Compter aveuglément sur l'IA pour des notes importantes.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="examples" class="card">
+      <h2>🔬 Exemples</h2>
+      <p><strong>Prompt :</strong> "Explique la différence entre mitose et méiose en 6 lignes."</p>
+      <p><strong>Bon usage :</strong> reformuler le texte obtenu, vérifier avec le cours, ajouter schéma perso.</p>
+    </section>
+
+    <section id="footer" class="card small">
+      <h2>📎 Notes rapides</h2>
+      <ul>
+        <li>Toujours vérifier la réponse et noter les erreurs.</li>
+        <li>Indiquer l'utilisation de l'IA dans le travail si nécessaire.</li>
+        <li>Utiliser l’IA comme un entraîneur, pas comme un remplaçant du travail personnel.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        navigator.clipboard.writeText(btn.getAttribute('data-copy'));
+        btn.textContent = "Copié ✅";
+        setTimeout(() => btn.textContent = "Copier", 1500);
+      });
+    });
+  </script>
 </body>
 </html>
