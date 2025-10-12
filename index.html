@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>IA pour les cours — Guide pratique</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Guide clair pour utiliser l'IA en cours : éthique, prompts, exemples, déploiement." />
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>🤖 IA pour les cours</h1>
+      <p class="subtitle">Utiliser l'IA efficacement, éthiquement et sans tricher.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="why" class="card">
+      <h2>📚 Pourquoi utiliser l'IA</h2>
+      <ul>
+        <li>Résumé rapide de fiches ou textes longs.</li>
+        <li>Explication pas-à-pas de concepts compliqués.</li>
+        <li>Génération d'exemples d'exercices et corrections.</li>
+        <li>Aide à la structuration d'un devoir (plan + arguments).</li>
+      </ul>
+    </section>
+
+    <section id="rules" class="card">
+      <h2>⚖️ Règles & éthique</h2>
+      <ol>
+        <li>Ne jamais rendre un travail entièrement généré sans l'indiquer.</li>
+        <li>Vérifier les faits et calculs (IA se trompe).</li>
+        <li>Respecter le règlement scolaire : demander au prof si doute.</li>
+        <li>Protéger les données personnelles (pas d'éléments sensibles).</li>
+      </ol>
+    </section>
+
+    <section id="how" class="card">
+      <h2>🛠️ Comment formuler un bon prompt</h2>
+      <p>Structure simple : contexte + tâche précise + format attendu + contraintes.</p>
+      <pre class="prompt">Contexte : Je suis en 2nde, sujet = révolution industrielle.
+Tâche : Résume en 6 points clairs.
+Format : bullet points, 1 phrase par point.
+Contraintes : pas plus de 60 mots par point.</pre>
+      <button class="btn" data-copy="Contexte : Je suis en 2nde, sujet = révolution industrielle.\nTâche : Résume en 6 points clairs.\nFormat : bullet points, 1 phrase par point.\nContraintes : pas plus de 60 mots par point.">Copier l'exemple</button>
+    </section>
+
+    <section id="templates" class="card">
+      <h2>✍️ Templates rapides</h2>
+      <details>
+        <summary>Résumé de cours</summary>
+        <pre class="prompt">Résume ce texte en 5 points essentiels, chacun en 1 phrase.</pre>
+        <button class="btn" data-copy="Résume ce texte en 5 points essentiels, chacun en 1 phrase.">Copier</button>
+      </details>
+
+      <details>
+        <summary>Plan pour un devoir</summary>
+        <pre class="prompt">Propose un plan en 3 parties pour un sujet : "Les causes de la Première Guerre mondiale".</pre>
+        <button class="btn" data-copy="Propose un plan en 3 parties pour un sujet : \"Les causes de la Première Guerre mondiale\".">Copier</button>
+      </details>
+
+      <details>
+        <summary>Explication pas-à-pas (math)</summary>
+        <pre class="prompt">Explique la résolution de x^2 - 5x + 6 = 0, étape par étape, sans sauter d'étapes.</pre>
+        <button class="btn" data-copy="Explique la résolution de x^2 - 5x + 6 = 0, étape par étape, sans sauter d'étapes.">Copier</button>
+      </details>
+    </section>
+
+    <section id="dosdonts" class="card">
+      <h2>✅ / ❌ À faire / Ne pas faire</h2>
+      <div class="grid">
+        <div>
+          <h3>✅ Faire</h3>
+          <ul>
+            <li>Vérifier et corriger la sortie.</li>
+            <li>Utiliser l'IA pour reformuler, non pour tricher.</li>
+            <li>Ajouter des sources et citations si tu t'appuies dessus.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>❌ Ne pas faire</h3>
+          <ul>
+            <li>Rendre un texte généré sans adaptation.</li>
+            <li>Donner des données privées.</li>
+            <li>Compter aveuglément sur l'IA pour des notes importantes.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="examples" class="card">
+      <h2>🔬 Exemples</h2>
+      <p><strong>Prompt :</strong> "Explique la différence entre mitose et méiose en 6 lignes."</p>
+      <p><strong>Bon usage :</strong> reformuler le texte obtenu, vérifier avec le cours, ajouter schéma perso.</p>
+    </section>
+
+    <section id="footer" class="card small">
+      <h2>📎 Notes rapides</h2>
+      <ul>
+        <li>Toujours vérifier la réponse et noter les erreurs.</li>
+        <li>Indiquer l'utilisation de l'IA dans le travail si nécessaire.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
