@@ -2,156 +2,10 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>IA pour les cours — Guide pratique</title>
   <link rel="stylesheet" href="styles.css" />
   <meta name="description" content="Guide clair pour utiliser l'IA en cours : éthique, prompts, exemples, entraînement et préparation aux contrôles." />
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Montserrat", sans-serif;
-      background: #f6f7fb;
-      color: #222;
-      line-height: 1.5;
-    }
-
-    header.hero {
-      background: linear-gradient(135deg, #0066ff, #0099ff);
-      color: white;
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    .hero h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-
-    .subtitle {
-      margin-top: 10px;
-      font-size: 1rem;
-      opacity: 0.9;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 16px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 14px;
-      padding: 18px;
-      margin: 20px 0;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    }
-
-    h2 {
-      font-size: 1.2rem;
-      color: #0070ff;
-      margin-bottom: 10px;
-    }
-
-    ul, ol {
-      padding-left: 20px;
-    }
-
-    .prompt {
-      background: #f0f3f9;
-      border-radius: 8px;
-      padding: 10px;
-      font-family: monospace;
-      font-size: 0.9rem;
-      overflow-x: auto;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 8px;
-      padding: 10px 14px;
-      font-size: 0.9rem;
-      border: none;
-      background: #0070ff;
-      color: white;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .btn:active {
-      background: #005fd6;
-    }
-
-    details summary {
-      font-weight: 600;
-      cursor: pointer;
-      margin-bottom: 6px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-
-    .small {
-      font-size: 0.9rem;
-    }
-
-    footer, #footer {
-      text-align: center;
-      color: #555;
-    }
-
-    /* 🔹 RESPONSIVE SMARTPHONE 🔹 */
-    @media (max-width: 600px) {
-      header.hero {
-        padding: 40px 15px;
-      }
-
-      .hero h1 {
-        font-size: 1.6rem;
-      }
-
-      .subtitle {
-        font-size: 0.95rem;
-      }
-
-      .container {
-        padding: 0 10px;
-      }
-
-      .card {
-        padding: 15px;
-        border-radius: 10px;
-        margin: 15px 0;
-      }
-
-      .btn {
-        width: 100%;
-        text-align: center;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      h2 {
-        font-size: 1.1rem;
-      }
-
-      .prompt {
-        font-size: 0.85rem;
-      }
-    }
-  </style>
 </head>
 <body>
   <header class="hero">
@@ -171,7 +25,7 @@
         <li>Aide à la structuration d'un devoir (plan + arguments).</li>
         <li>Entraînement personnalisé : l'IA peut simuler des questions de contrôle pour t'entraîner, corriger tes erreurs et t’aider à progresser avant l’évaluation.</li>
         <li>Moins de stress : en s’exerçant avec des sujets proches de ceux du professeur, tu arrives préparé, confiant et sans panique le jour du contrôle.</li>
-        <li>Adaptation au professeur : l’IA peut s’ajuster au style de ton enseignant (type de questions, exigences, structure des réponses).</li>
+        <li>Adaptation au professeur : l’IA peut s’ajuster au style de ton enseignant (par exemple : type de questions, exigences, structure des réponses).</li>
       </ul>
     </section>
 
@@ -206,13 +60,13 @@ Contraintes : pas plus de 60 mots par point.</pre>
       <details>
         <summary>Plan pour un devoir</summary>
         <pre class="prompt">Propose un plan en 3 parties pour un sujet : "Les causes de la Première Guerre mondiale".</pre>
-        <button class="btn" data-copy="Propose un plan en 3 parties pour un sujet : 'Les causes de la Première Guerre mondiale'.">Copier</button>
+        <button class="btn" data-copy="Propose un plan en 3 parties pour un sujet : \"Les causes de la Première Guerre mondiale\".">Copier</button>
       </details>
 
       <details>
         <summary>Explication pas-à-pas (math)</summary>
-        <pre class="prompt">Explique la résolution de x² - 5x + 6 = 0, étape par étape, sans sauter d'étapes.</pre>
-        <button class="btn" data-copy="Explique la résolution de x² - 5x + 6 = 0, étape par étape, sans sauter d'étapes.">Copier</button>
+        <pre class="prompt">Explique la résolution de x^2 - 5x + 6 = 0, étape par étape, sans sauter d'étapes.</pre>
+        <button class="btn" data-copy="Explique la résolution de x^2 - 5x + 6 = 0, étape par étape, sans sauter d'étapes.">Copier</button>
       </details>
 
       <details>
@@ -261,14 +115,6 @@ Contraintes : pas plus de 60 mots par point.</pre>
     </section>
   </main>
 
-  <script>
-    document.querySelectorAll('.btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        navigator.clipboard.writeText(btn.getAttribute('data-copy'));
-        btn.textContent = "Copié ✅";
-        setTimeout(() => btn.textContent = "Copier", 1500);
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
