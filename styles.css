@@ -1,17 +1,24 @@
 :root {
-  --bg: #000000;
-  --text: #ffffff;
-  --muted: #999999;
+  /* Fond global = gris très foncé, pas noir */
+  --bg: #0f1115;
+  --surface: #17191e;
+  --surface-light: #1d2026;
 
-  /* Bleu emoji (⬇️) + variantes */
+  --text: #ffffff;
+  --muted: #b3b9c5;
+
+  /* Bleu emoji ⬇️ et variantes */
   --accent: #3b82f6;
   --accent-light: #60a5fa;
   --accent-dark: #1e3a8a;
 
-  --radius: 8px;
-
-  --glass: rgba(255, 255, 255, 0.05);
+  --radius: 10px;
+  --border: #2a2d34;
 }
+
+/* ----------------------------------------------------- */
+/* GLOBAL */
+/* ----------------------------------------------------- */
 
 * {
   margin: 0;
@@ -24,22 +31,24 @@ body {
   background: var(--bg);
   color: var(--text);
   padding: 32px 18px 90px;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
-  line-height: 1.6;
 }
 
-/* ---------------- HERO ---------------- */
+/* ----------------------------------------------------- */
+/* HERO */
+/* ----------------------------------------------------- */
 
 .hero {
   text-align: center;
   margin-bottom: 50px;
-  animation: fadeUp 1s ease;
 }
 
 .hero h1 {
-  font-size: 34px;
+  font-size: 32px;
   font-weight: 800;
-  letter-spacing: -0.5px;
+
+  /* Bleu en dégradé subtil */
   background: linear-gradient(90deg, var(--accent-light), var(--accent));
   -webkit-background-clip: text;
   color: transparent;
@@ -48,10 +57,12 @@ body {
 .hero-sub {
   font-size: 16px;
   color: var(--muted);
-  margin-top: 6px;
+  margin-top: 8px;
 }
 
-/* ---------------- CONTENT ---------------- */
+/* ----------------------------------------------------- */
+/* CONTENT */
+/* ----------------------------------------------------- */
 
 .content {
   max-width: 760px;
@@ -59,16 +70,19 @@ body {
 }
 
 .section {
-  margin-bottom: 55px;
-  animation: fadeUp 0.8s ease;
+  margin-bottom: 48px;
+  padding: 20px 4px;
+  background: transparent; /* full clean */
 }
 
-/* ------ TITRES AVEC SOULIGNEMENT ANIMÉ ------ */
+/* ----------------------------------------------------- */
+/* TITRES : ligne bleue plus douce */
+/* ----------------------------------------------------- */
 
 h2 {
-  font-size: 22px;
+  font-size: 21px;
   font-weight: 700;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   position: relative;
   display: inline-block;
 }
@@ -77,53 +91,51 @@ h2::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -4px;
+  bottom: -6px;
   height: 2px;
-  width: 0%;
-  background: linear-gradient(90deg, var(--accent-light), var(--accent));
-  border-radius: 2px;
-  transition: width 0.4s ease;
-}
-
-.section:hover h2::after {
   width: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  opacity: 0.45; /* plus doux */
+  border-radius: 2px;
 }
 
-/* ---------------- TEXTE / LISTES ---------------- */
+/* ----------------------------------------------------- */
+/* TEXTE & LISTES */
+/* ----------------------------------------------------- */
 
 .lead {
   color: var(--muted);
-  margin-bottom: 20px;
+  margin: 14px 0 20px 0;
   font-size: 15px;
 }
 
 ul, ol {
-  padding-left: 20px;
+  padding-left: 22px;
 }
 
 li {
   margin-bottom: 8px;
+  color: var(--text);
 }
 
-/* ---------------- PROMPTS ---------------- */
+/* ----------------------------------------------------- */
+/* PROMPTS */
+/* ----------------------------------------------------- */
 
 pre.prompt {
-  background: #0c0c0f;
-  border: 1px solid #111;
+  background: var(--surface);
+  border: 1px solid var(--border);
   padding: 14px;
   border-radius: var(--radius);
-  font-size: 14px;
   white-space: pre-wrap;
-  margin-bottom: 12px;
-  transition: background 0.3s ease, border 0.3s ease;
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: var(--muted);
 }
 
-pre.prompt:hover {
-  background: #11141a;
-  border-color: var(--accent-light);
-}
-
-/* ---------------- BOUTONS (gradient + glow) ---------------- */
+/* ----------------------------------------------------- */
+/* BOUTONS */
+/* ----------------------------------------------------- */
 
 .btn {
   background: linear-gradient(90deg, var(--accent-dark), var(--accent));
@@ -135,49 +147,57 @@ pre.prompt:hover {
   cursor: pointer;
   color: #ffffff;
   width: 100%;
-  margin: 10px 0;
+  margin-top: 8px;
   transition: 0.25s ease;
-  box-shadow: 0 0 0px rgba(59,130,246,0.4);
+  box-shadow: 0 0 10px rgba(59,130,246,0.18); /* glow très léger */
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 12px rgba(59,130,246,0.5);
-  opacity: 1;
+  box-shadow: 0 0 14px rgba(59,130,246,0.25);
 }
 
 .btn:active {
-  transform: scale(0.98);
+  transform: scale(0.97);
 }
 
-/* ---------------- DETAILS : effet verre + glow léger ---------------- */
+/* ----------------------------------------------------- */
+/* DETAILS */
+/* ----------------------------------------------------- */
 
 details {
-  margin-top: 18px;
+  margin-top: 20px;
   padding: 14px;
   border-radius: var(--radius);
-  background: var(--glass);
-  border: 1px solid #1a1a1a;
-  backdrop-filter: blur(6px);
-  transition: border 0.25s ease, background 0.25s ease;
+
+  /* Effet verre très doux */
+  background: var(--surface-light);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(3px);
+  transition: 0.25s ease;
 }
 
 details:hover {
   border-color: var(--accent-light);
-  background: rgba(255, 255, 255, 0.07);
 }
 
 summary {
   cursor: pointer;
   font-weight: 600;
+  font-size: 16px;
   color: var(--accent-light);
   margin-bottom: 10px;
-  font-size: 16px;
 }
 
-/* ---------------- ANIMATIONS ---------------- */
+/* ----------------------------------------------------- */
+/* ANIMATIONS */
+/* ----------------------------------------------------- */
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
+  from { opacity: 0; transform: translateY(22px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+.section {
+  animation: fadeUp 0.8s ease forwards;
 }
