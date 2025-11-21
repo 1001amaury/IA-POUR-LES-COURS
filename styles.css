@@ -1,24 +1,27 @@
 :root {
-  /* Fond global = gris très foncé, pas noir */
-  --bg: #0f1115;
-  --surface: #17191e;
-  --surface-light: #1d2026;
+  /* Fond noir premium avec nuances */
+  --bg-top: #101214;
+  --bg-mid: #0d0f13;
+  --bg-bottom: #0a0c0f;
 
+  /* Surfaces */
+  --surface: #16191f;
+  --surface-light: #1c1f25;
+
+  /* Texte */
   --text: #ffffff;
-  --muted: #b3b9c5;
+  --muted: #aeb5c3;
 
-  /* Bleu emoji ⬇️ et variantes */
+  /* Bleu (emoji ⬇️) */
   --accent: #3b82f6;
-  --accent-light: #60a5fa;
+  --accent-light: #5fa1ff;
   --accent-dark: #1e3a8a;
 
   --radius: 10px;
   --border: #2a2d34;
 }
 
-/* ----------------------------------------------------- */
-/* GLOBAL */
-/* ----------------------------------------------------- */
+/* ---------------- GLOBAL ---------------- */
 
 * {
   margin: 0;
@@ -28,41 +31,47 @@
 
 body {
   font-family: "Inter", sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  padding: 32px 18px 90px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+
+  /* Fond noir premium */
+  background: linear-gradient(
+    180deg,
+    var(--bg-top) 0%,
+    var(--bg-mid) 40%,
+    var(--bg-bottom) 100%
+  );
+
+  padding: 34px 18px 90px;
+  color: var(--text);
 }
 
-/* ----------------------------------------------------- */
-/* HERO */
-/* ----------------------------------------------------- */
+/* ---------------- HERO ---------------- */
 
 .hero {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 55px;
 }
 
 .hero h1 {
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 800;
-
-  /* Bleu en dégradé subtil */
-  background: linear-gradient(90deg, var(--accent-light), var(--accent));
+  background: linear-gradient(
+    90deg,
+    var(--accent-light),
+    var(--accent)
+  );
   -webkit-background-clip: text;
   color: transparent;
 }
 
 .hero-sub {
+  margin-top: 10px;
   font-size: 16px;
   color: var(--muted);
-  margin-top: 8px;
 }
 
-/* ----------------------------------------------------- */
-/* CONTENT */
-/* ----------------------------------------------------- */
+/* ---------------- CONTENT ---------------- */
 
 .content {
   max-width: 760px;
@@ -70,19 +79,15 @@ body {
 }
 
 .section {
-  margin-bottom: 48px;
-  padding: 20px 4px;
-  background: transparent; /* full clean */
+  margin-bottom: 50px;
 }
 
-/* ----------------------------------------------------- */
-/* TITRES : ligne bleue plus douce */
-/* ----------------------------------------------------- */
+/* ---------------- TITRES ---------------- */
 
 h2 {
-  font-size: 21px;
+  font-size: 22px;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   position: relative;
   display: inline-block;
 }
@@ -90,114 +95,98 @@ h2 {
 h2::after {
   content: "";
   position: absolute;
-  left: 0;
   bottom: -6px;
-  height: 2px;
+  left: 0;
   width: 100%;
-  background: linear-gradient(90deg, var(--accent), var(--accent-light));
-  opacity: 0.45; /* plus doux */
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    var(--accent-light)
+  );
+  opacity: 0.5;
   border-radius: 2px;
 }
 
-/* ----------------------------------------------------- */
-/* TEXTE & LISTES */
-/* ----------------------------------------------------- */
+/* ---------------- TEXTE ---------------- */
 
 .lead {
   color: var(--muted);
-  margin: 14px 0 20px 0;
-  font-size: 15px;
+  margin-bottom: 18px;
 }
 
 ul, ol {
-  padding-left: 22px;
+  padding-left: 20px;
 }
 
 li {
   margin-bottom: 8px;
-  color: var(--text);
 }
 
-/* ----------------------------------------------------- */
-/* PROMPTS */
-/* ----------------------------------------------------- */
+/* ---------------- PROMPTS ---------------- */
 
 pre.prompt {
   background: var(--surface);
   border: 1px solid var(--border);
   padding: 14px;
   border-radius: var(--radius);
-  white-space: pre-wrap;
   font-size: 14px;
-  margin-bottom: 10px;
   color: var(--muted);
+  margin-bottom: 10px;
+  white-space: pre-wrap;
 }
 
-/* ----------------------------------------------------- */
-/* BOUTONS */
-/* ----------------------------------------------------- */
+/* ---------------- BOUTONS ---------------- */
 
 .btn {
-  background: linear-gradient(90deg, var(--accent-dark), var(--accent));
-  border: none;
+  width: 100%;
   padding: 14px 18px;
   border-radius: var(--radius);
+  border: none;
+  background: linear-gradient(90deg, var(--accent-dark), var(--accent));
+  color: white;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  color: #ffffff;
-  width: 100%;
-  margin-top: 8px;
-  transition: 0.25s ease;
-  box-shadow: 0 0 10px rgba(59,130,246,0.18); /* glow très léger */
+  transition: .25s ease;
+  box-shadow: 0 0 10px rgba(59,130,246,0.18);
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 14px rgba(59,130,246,0.25);
+  box-shadow: 0 0 14px rgba(59,130,246,0.28);
 }
 
 .btn:active {
   transform: scale(0.97);
 }
 
-/* ----------------------------------------------------- */
-/* DETAILS */
-/* ----------------------------------------------------- */
+/* ---------------- DETAILS ---------------- */
 
 details {
-  margin-top: 20px;
-  padding: 14px;
-  border-radius: var(--radius);
-
-  /* Effet verre très doux */
   background: var(--surface-light);
   border: 1px solid var(--border);
-  backdrop-filter: blur(3px);
-  transition: 0.25s ease;
-}
-
-details:hover {
-  border-color: var(--accent-light);
+  padding: 14px;
+  border-radius: var(--radius);
+  margin-top: 20px;
+  backdrop-filter: blur(4px);
 }
 
 summary {
   cursor: pointer;
+  color: var(--accent-light);
   font-weight: 600;
   font-size: 16px;
-  color: var(--accent-light);
   margin-bottom: 10px;
 }
 
-/* ----------------------------------------------------- */
-/* ANIMATIONS */
-/* ----------------------------------------------------- */
+/* ---------------- ANIMATIONS ---------------- */
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(22px); }
-  to { opacity: 1; transform: translateY(0); }
+.fade-up {
+  animation: fadeUp .8s ease both;
 }
 
-.section {
-  animation: fadeUp 0.8s ease forwards;
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
 }
