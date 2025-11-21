@@ -1,12 +1,13 @@
 :root {
-  --bg: #0b0b0b;
+  --bg: #0d0d0d;
   --fg: #ffffff;
   --muted: #bdbdbd;
-  --card: #141414;
-  --border: #242424;
-  --radius: 14px;
-  --shadow: 0 10px 24px rgba(0,0,0,.35);
+  --card: #161616;
+  --border: #222;
+  --radius: 16px;
+  --shadow: 0 8px 28px rgba(0,0,0,.4);
   --accent: #e7e7e7;
+  --hover: #1d1d1d;
 }
 
 * {
@@ -19,55 +20,101 @@ body {
   background: var(--bg);
   color: var(--fg);
   font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
 }
 
-/* ---------- HEADER ---------- */
+/* -----------------------------------
+   ANIMATIONS GLOBAL 
+----------------------------------- */
+
+.fade-in {
+  opacity: 0;
+  animation: fade 1s forwards ease-out;
+}
+
+@keyframes fade {
+  to { opacity: 1; }
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: slideUp 0.7s forwards ease-out;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -----------------------------------
+   HEADER 
+----------------------------------- */
+
 .hero {
-  padding: 48px 0 32px;
+  padding: 50px 0 28px;
   text-align: center;
 }
 
-.hero h1 {
-  font-size: 28px;
+.title-anim {
+  font-size: 30px;
   font-weight: 800;
+  animation: pop 0.6s ease-out;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.85); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
 }
 
 .subtitle {
-  margin-top: 8px;
+  margin-top: 6px;
   font-size: 15px;
   color: var(--muted);
 }
 
-/* ---------- GLOBAL LAYOUT ---------- */
+/* -----------------------------------
+   LAYOUT
+----------------------------------- */
+
 .container {
-  width: 100%;
-  max-width: 760px;
+  max-width: 780px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 18px;
 }
 
-/* ---------- CARDS ---------- */
+/* -----------------------------------
+   CARDS
+----------------------------------- */
+
 .card {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 22px 18px;
-  margin-bottom: 20px;
+  padding: 24px 20px;
+  margin-bottom: 22px;
   box-shadow: var(--shadow);
+  transition: transform .25s, background .25s;
 }
 
-.card.small {
-  padding: 18px;
+/* Hover effet premium */
+.card:hover {
+  transform: translateY(-3px);
+  background: var(--hover);
 }
 
-/* ---------- TITLES ---------- */
+/* -----------------------------------
+   TITRES & TEXTE
+----------------------------------- */
+
 h2 {
   font-size: 20px;
   margin-bottom: 14px;
   font-weight: 700;
 }
 
-/* ---------- TEXT ---------- */
 p, li, summary {
   font-size: 15px;
   line-height: 1.55;
@@ -78,37 +125,52 @@ ul, ol {
   padding-left: 18px;
 }
 
+/* -----------------------------------
+   DETAILS 
+----------------------------------- */
+
 summary {
   cursor: pointer;
   padding: 6px 0;
   font-weight: 600;
   color: var(--accent);
+  transition: .3s;
 }
 
-/* ---------- GRID ---------- */
-.grid {
-  display: grid;
-  gap: 18px;
+summary:hover {
+  opacity: .7;
 }
 
-/* ---------- PRE (PROMPTS) ---------- */
+/* -----------------------------------
+   PROMPTS
+----------------------------------- */
+
 pre.prompt {
-  background: #0f0f0f;
+  background: #101010;
   padding: 14px;
-  border-radius: 10px;
+  border-radius: 12px;
   border: 1px solid #2a2a2a;
   font-size: 14px;
   white-space: pre-wrap;
   margin-bottom: 12px;
+  transition: 0.3s;
 }
 
-/* ---------- BUTTON ---------- */
+pre.prompt:hover {
+  background: #151515;
+}
+
+/* -----------------------------------
+   BUTTONS 
+----------------------------------- */
+
 .btn {
   width: 100%;
-  padding: 10px 0;
-  border-radius: 10px;
+  padding: 12px 0;
+  margin-top: 4px;
+  border-radius: 12px;
   border: 1px solid var(--border);
-  background: #ffffff10;
+  background: #ffffff12;
   color: var(--fg);
   font-size: 15px;
   font-weight: 600;
@@ -116,10 +178,19 @@ pre.prompt {
   transition: .25s;
 }
 
+.btn:hover {
+  background: #ffffff25;
+}
+
 .btn:active {
   transform: scale(0.97);
 }
 
-.btn:hover {
-  background: #ffffff20;
+/* -----------------------------------
+   GRID
+----------------------------------- */
+
+.grid {
+  display: grid;
+  gap: 20px;
 }
