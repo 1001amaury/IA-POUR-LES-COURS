@@ -1,9 +1,9 @@
 :root {
-  --bg: #0a0a0a;
+  --bg: #000000;
   --text: #ffffff;
-  --muted: #aaaaaa;
-  --accent: #6366f1;
-  --radius: 8px;
+  --muted: #999999;
+  --accent: #1db954; /* Spotify green */
+  --radius: 6px;
 }
 
 * {
@@ -16,106 +16,109 @@ body {
   font-family: "Inter", sans-serif;
   background: var(--bg);
   color: var(--text);
-  padding: 26px 14px 60px;
-  line-height: 1.55;
+  padding: 32px 18px 90px;
   -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
 }
 
-/* ---------------- HEADER ---------------- */
+/* ------------ HERO ------------ */
 
 .hero {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 .hero h1 {
-  font-size: 26px;
+  font-size: 32px;
   font-weight: 800;
+  margin-bottom: 8px;
 }
 
-.hero p {
-  margin-top: 6px;
+.hero-sub {
+  font-size: 16px;
   color: var(--muted);
-  font-size: 15px;
 }
 
-/* ---------------- CONTENU (CONTINU) ---------------- */
+/* ------------ CONTENT ------------ */
 
-.content section {
-  margin-bottom: 34px;
-  animation: fadeUp 0.7s ease;
+.content {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.section {
+  margin-bottom: 50px;
+  animation: fadeUp 0.8s ease;
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
-p {
-  margin-bottom: 10px;
-  font-size: 15px;
-  color: var(--text);
+.lead {
+  color: var(--muted);
+  margin-bottom: 20px;
 }
 
 ul, ol {
-  margin-top: 10px;
   padding-left: 20px;
 }
 
 li {
-  margin-bottom: 6px;
-  color: var(--text);
+  margin-bottom: 8px;
 }
 
-/* ---------------- DETAILS ---------------- */
+/* ------------ PROMPTS ------------ */
+
+pre.prompt {
+  background: #0f0f0f;
+  border: 1px solid #111;
+  padding: 14px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  white-space: pre-wrap;
+  margin-bottom: 10px;
+}
+
+/* ------------ BUTTONS ------------ */
+
+.btn {
+  background: var(--accent);
+  border: none;
+  padding: 12px 18px;
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  color: black;
+  width: 100%;
+  margin-bottom: 10px;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* ------------ DETAILS ------------ */
 
 details {
-  margin-top: 14px;
-  padding: 10px 0;
-  border-bottom: 1px solid #1b1b1b;
+  margin-top: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #111;
 }
 
 summary {
   cursor: pointer;
   font-weight: 600;
+  font-size: 16px;
   color: var(--accent);
-  font-size: 15px;
+  margin-bottom: 12px;
 }
 
-/* ---------------- PROMPTS ---------------- */
-
-pre.prompt {
-  margin-top: 10px;
-  background: #111;
-  padding: 12px;
-  border-radius: var(--radius);
-  font-size: 14px;
-  white-space: pre-wrap;
-  border: 1px solid #1a1a1a;
-}
-
-/* ---------------- BUTTON ---------------- */
-
-.copy-btn {
-  margin-top: 10px;
-  width: 100%;
-  padding: 11px 0;
-  border-radius: var(--radius);
-  border: none;
-  background: var(--accent);
-  color: white;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.copy-btn:active {
-  transform: scale(0.97);
-}
-
-/* ---------------- ANIMATIONS ---------------- */
+/* ------------ ANIMATIONS ------------ */
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
