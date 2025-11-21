@@ -1,12 +1,9 @@
 :root {
-  --bg: #ffffff;
-  --text: #111111;
-  --muted: #555;
-  --light: #f7f7f8;
-  --border: #e4e4e7;
+  --bg: #0a0a0a;
+  --text: #ffffff;
+  --muted: #aaaaaa;
   --accent: #6366f1;
-  --radius: 12px;
-  --shadow: 0 4px 16px rgba(0,0,0,0.06);
+  --radius: 8px;
 }
 
 * {
@@ -19,128 +16,108 @@ body {
   font-family: "Inter", sans-serif;
   background: var(--bg);
   color: var(--text);
-  padding: 28px 12px 60px;
+  padding: 26px 14px 60px;
   line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* ------------------ HEADER ------------------ */
+/* ---------------- HEADER ---------------- */
 
 .hero {
   text-align: center;
-  margin-bottom: 34px;
+  margin-bottom: 40px;
 }
 
 .hero h1 {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 800;
-  animation: fadeIn 0.6s ease-out;
 }
 
-.subtitle {
-  margin-top: 8px;
-  font-size: 15px;
+.hero p {
+  margin-top: 6px;
   color: var(--muted);
+  font-size: 15px;
 }
 
-/* ------------------ BLOCK SECTIONS ------------------ */
+/* ---------------- CONTENU (CONTINU) ---------------- */
 
-.block {
-  background: var(--light);
-  padding: 22px 20px;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  margin-bottom: 26px;
-  box-shadow: var(--shadow);
-  animation: fadeUp 0.6s ease-out;
+.content section {
+  margin-bottom: 34px;
+  animation: fadeUp 0.7s ease;
 }
 
-.block h2 {
+h2 {
   font-size: 20px;
   font-weight: 700;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
-.block ul, .block ol {
-  padding-left: 18px;
-  margin-top: 8px;
+p {
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: var(--text);
 }
 
-.block li {
+ul, ol {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+li {
   margin-bottom: 6px;
+  color: var(--text);
 }
 
-/* ------------------ DETAILS ------------------ */
+/* ---------------- DETAILS ---------------- */
 
 details {
-  background: #fff;
-  padding: 14px 14px;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  margin: 10px 0;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-details:hover {
-  border-color: var(--accent);
+  margin-top: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid #1b1b1b;
 }
 
 summary {
+  cursor: pointer;
   font-weight: 600;
-  margin-bottom: 8px;
+  color: var(--accent);
+  font-size: 15px;
 }
 
-/* ------------------ PROMPTS ------------------ */
+/* ---------------- PROMPTS ---------------- */
 
 pre.prompt {
-  background: var(--light);
-  border: 1px solid var(--border);
-  padding: 14px;
+  margin-top: 10px;
+  background: #111;
+  padding: 12px;
   border-radius: var(--radius);
-  white-space: pre-wrap;
-  margin-bottom: 8px;
   font-size: 14px;
+  white-space: pre-wrap;
+  border: 1px solid #1a1a1a;
 }
 
-/* ------------------ BUTTON ------------------ */
+/* ---------------- BUTTON ---------------- */
 
 .copy-btn {
+  margin-top: 10px;
   width: 100%;
-  padding: 10px 0;
-  font-size: 15px;
-  font-weight: 600;
+  padding: 11px 0;
   border-radius: var(--radius);
   border: none;
   background: var(--accent);
   color: white;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
   transition: 0.2s;
-}
-
-.copy-btn:hover {
-  opacity: 0.9;
 }
 
 .copy-btn:active {
   transform: scale(0.97);
 }
 
-/* ------------------ ANIMATIONS ------------------ */
-
-.fade-in {
-  animation: fadeIn 0.5s ease-out;
-}
-
-.fade-up {
-  animation: fadeUp 0.6s ease-out;
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
+/* ---------------- ANIMATIONS ---------------- */
 
 @keyframes fadeUp {
-  from {opacity: 0; transform: translateY(18px);}
-  to {opacity: 1; transform: translateY(0);}
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
