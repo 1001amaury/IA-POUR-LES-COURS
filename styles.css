@@ -2,8 +2,15 @@
   --bg: #000000;
   --text: #ffffff;
   --muted: #999999;
-  --accent: #1db954; /* Spotify green */
-  --radius: 6px;
+
+  /* Bleu emoji (⬇️) + variantes */
+  --accent: #3b82f6;
+  --accent-light: #60a5fa;
+  --accent-dark: #1e3a8a;
+
+  --radius: 8px;
+
+  --glass: rgba(255, 255, 255, 0.05);
 }
 
 * {
@@ -21,25 +28,30 @@ body {
   line-height: 1.6;
 }
 
-/* ------------ HERO ------------ */
+/* ---------------- HERO ---------------- */
 
 .hero {
   text-align: center;
   margin-bottom: 50px;
+  animation: fadeUp 1s ease;
 }
 
 .hero h1 {
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 800;
-  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+  background: linear-gradient(90deg, var(--accent-light), var(--accent));
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .hero-sub {
   font-size: 16px;
   color: var(--muted);
+  margin-top: 6px;
 }
 
-/* ------------ CONTENT ------------ */
+/* ---------------- CONTENT ---------------- */
 
 .content {
   max-width: 760px;
@@ -47,19 +59,42 @@ body {
 }
 
 .section {
-  margin-bottom: 50px;
+  margin-bottom: 55px;
   animation: fadeUp 0.8s ease;
 }
+
+/* ------ TITRES AVEC SOULIGNEMENT ANIMÉ ------ */
 
 h2 {
   font-size: 22px;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  position: relative;
+  display: inline-block;
 }
+
+h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent-light), var(--accent));
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.section:hover h2::after {
+  width: 100%;
+}
+
+/* ---------------- TEXTE / LISTES ---------------- */
 
 .lead {
   color: var(--muted);
   margin-bottom: 20px;
+  font-size: 15px;
 }
 
 ul, ol {
@@ -70,57 +105,79 @@ li {
   margin-bottom: 8px;
 }
 
-/* ------------ PROMPTS ------------ */
+/* ---------------- PROMPTS ---------------- */
 
 pre.prompt {
-  background: #0f0f0f;
+  background: #0c0c0f;
   border: 1px solid #111;
   padding: 14px;
   border-radius: var(--radius);
   font-size: 14px;
   white-space: pre-wrap;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  transition: background 0.3s ease, border 0.3s ease;
 }
 
-/* ------------ BUTTONS ------------ */
+pre.prompt:hover {
+  background: #11141a;
+  border-color: var(--accent-light);
+}
+
+/* ---------------- BOUTONS (gradient + glow) ---------------- */
 
 .btn {
-  background: var(--accent);
+  background: linear-gradient(90deg, var(--accent-dark), var(--accent));
   border: none;
-  padding: 12px 18px;
+  padding: 14px 18px;
   border-radius: var(--radius);
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  color: black;
+  color: #ffffff;
   width: 100%;
-  margin-bottom: 10px;
-  transition: 0.2s;
+  margin: 10px 0;
+  transition: 0.25s ease;
+  box-shadow: 0 0 0px rgba(59,130,246,0.4);
 }
 
 .btn:hover {
-  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(59,130,246,0.5);
+  opacity: 1;
 }
 
-/* ------------ DETAILS ------------ */
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* ---------------- DETAILS : effet verre + glow léger ---------------- */
 
 details {
   margin-top: 18px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid #111;
+  padding: 14px;
+  border-radius: var(--radius);
+  background: var(--glass);
+  border: 1px solid #1a1a1a;
+  backdrop-filter: blur(6px);
+  transition: border 0.25s ease, background 0.25s ease;
+}
+
+details:hover {
+  border-color: var(--accent-light);
+  background: rgba(255, 255, 255, 0.07);
 }
 
 summary {
   cursor: pointer;
   font-weight: 600;
+  color: var(--accent-light);
+  margin-bottom: 10px;
   font-size: 16px;
-  color: var(--accent);
-  margin-bottom: 12px;
 }
 
-/* ------------ ANIMATIONS ------------ */
+/* ---------------- ANIMATIONS ---------------- */
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
 }
