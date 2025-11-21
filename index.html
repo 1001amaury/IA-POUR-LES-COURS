@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
-  <title>IA pour les cours — Guide pratique</title>
+  <title>IA & cours — Guide simple</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
@@ -12,69 +12,73 @@
 <body>
 
 <header class="hero fade-in">
-  <h1>🤖 Utiliser l’IA pour mieux apprendre</h1>
-  <p class="subtitle">Un guide simple, clair, et sans bullshit.</p>
+  <h1>🤖 Utiliser l'IA pour mieux apprendre</h1>
+  <p>Un guide clair, concis, lisible. Rien de plus.</p>
 </header>
 
-<main>
+<main class="content">
 
-  <section class="block fade-up">
+  <section class="fade-in">
     <h2>📚 Pourquoi utiliser l’IA</h2>
-    <p>L’IA sert surtout à comprendre plus vite. Pas à remplacer ton cerveau.</p>
+    <p>L’objectif n’est pas de tricher, mais de gagner en compréhension.</p>
+
     <ul>
-      <li>Explications plus simples que celles du cours.</li>
-      <li>Gagner du temps sur les résumés et les fiches.</li>
-      <li>S’entraîner avec des exercices corrigés.</li>
-      <li>Créer des plans, structurer tes idées.</li>
-      <li>Rendre un chapitre compréhensible quand t’as décroché.</li>
+      <li>Comprendre un chapitre plus rapidement.</li>
+      <li>Faire des résumés sans y passer 2h.</li>
+      <li>S'entraîner avec corrections directes.</li>
+      <li>Structurer un devoir, un plan, une explication.</li>
+      <li>Demander des explications adaptées à ton niveau réel.</li>
     </ul>
   </section>
 
-  <section class="block fade-up">
-    <h2>🧱 Limites</h2>
-    <p>L’IA ne “sait pas tout”. Et ça se voit parfois.</p>
+  <section class="fade-in">
+    <h2>🧱 Limites à connaître</h2>
+    <p>L’IA n’a pas ton cours, ni ton prof, ni ton contexte.</p>
+
     <ul>
-      <li>Elle peut inventer des infos.</li>
-      <li>Elle ne connaît pas ton cours ni ton prof.</li>
-      <li>Elle peut se tromper sur les détails.</li>
-      <li>Les réponses sont parfois trop générales.</li>
+      <li>Peut inventer des infos ou des chiffres.</li>
+      <li>Comprend mal certaines consignes scolaires.</li>
+      <li>Peut simplifier trop… ou pas assez.</li>
+      <li>N’a aucune idée de ce que ton prof attend exactement.</li>
     </ul>
   </section>
 
-  <section class="block fade-up">
-    <h2>⚖️ Règles</h2>
+  <section class="fade-in">
+    <h2>⚖️ Ce qui est autorisé</h2>
+
     <ol>
-      <li>Utiliser l’IA pour apprendre = ok.</li>
-      <li>Copier-coller un devoir = non.</li>
-      <li>Vérifier tout ce qu’elle te donne.</li>
-      <li>Ne jamais envoyer de données perso.</li>
+      <li>S'en servir pour apprendre, oui.</li>
+      <li>Copier un devoir entier, non.</li>
+      <li>Toujours vérifier ce qu’elle te donne.</li>
+      <li>Ne jamais envoyer d'informations personnelles.</li>
     </ol>
   </section>
 
-  <section class="block fade-up">
-    <h2>🛠️ Comment faire un bon prompt</h2>
-    <p>Décris : ton niveau, la tâche, la forme, et la longueur.</p>
+  <section class="fade-in">
+    <h2>🛠️ Comment faire une bonne demande</h2>
+
+    <p>Dis ton niveau + ce que tu veux + le format + la longueur.</p>
 
 <pre class="prompt">
 Je suis en Seconde.  
 Chapitre : Révolution industrielle.  
-Fais-moi un résumé en 6 points, une phrase par point.
+Fais un résumé en 6 points clairs, une phrase par point.
 </pre>
 
-<button class="copy-btn" data-copy="Je suis en Seconde. Chapitre : Révolution industrielle. Fais-moi un résumé en 6 points, une phrase par point.">Copier</button>
+    <button class="copy-btn" data-copy="Je suis en Seconde. Chapitre : Révolution industrielle. Fais un résumé en 6 points clairs, une phrase par point.">Copier</button>
   </section>
 
-  <section class="block fade-up">
-    <h2>✍️ Modèles rapides</h2>
+  <section class="fade-in">
+    <h2>✍️ Modèles courts</h2>
 
     <details>
-      <summary>Résumé de cours</summary>
+      <summary>Résumé</summary>
       <pre class="prompt">Résume ce texte en 5 idées principales, niveau lycée.</pre>
       <button class="copy-btn" data-copy="Résume ce texte en 5 idées principales, niveau lycée.">Copier</button>
     </details>
 
     <details>
-      <summary>Plan détaillé</summary>
+      <summary>Plan</summary>
       <pre class="prompt">Fais un plan I/II/III + sous-parties sur : "Les causes de la Première Guerre mondiale".</pre>
       <button class="copy-btn" data-copy='Fais un plan I/II/III + sous-parties sur : "Les causes de la Première Guerre mondiale".'>Copier</button>
     </details>
@@ -84,25 +88,27 @@ Fais-moi un résumé en 6 points, une phrase par point.
       <pre class="prompt">Explique la résolution de x² - 5x + 6 = 0 étape par étape.</pre>
       <button class="copy-btn" data-copy="Explique la résolution de x² - 5x + 6 = 0 étape par étape.">Copier</button>
     </details>
+
   </section>
 
-  <section class="block fade-up">
-    <h2>🔬 Exemple</h2>
+  <section class="fade-in">
+    <h2>🔬 Exemple concret</h2>
+
     <p><strong>Demande :</strong> “Explique la différence entre mitose et méiose en 6 lignes.”</p>
 
     <ul>
-      <li><strong>Avant :</strong> relire ton cours.</li>
-      <li><strong>Pendant :</strong> poser une question précise.</li>
-      <li><strong>Après :</strong> vérifier les points importants.</li>
+      <li><strong>Avant :</strong> relis ton cours.</li>
+      <li><strong>Pendant :</strong> pose une question précise.</li>
+      <li><strong>Après :</strong> vérifie les points essentiels.</li>
     </ul>
   </section>
 
-  <section class="block fade-up">
+  <section class="fade-in">
     <h2>📎 À retenir</h2>
     <ul>
-      <li>L’IA t’aide, elle ne fait pas à ta place.</li>
-      <li>Simple ≠ vrai : vérifie toujours.</li>
-      <li>Comprendre reste la vraie clé.</li>
+      <li>L’IA sert à comprendre, pas à remplacer ton travail.</li>
+      <li>Une explication simple n’est pas forcément correcte.</li>
+      <li>Réfléchir reste obligatoire.</li>
     </ul>
   </section>
 
