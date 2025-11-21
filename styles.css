@@ -1,13 +1,12 @@
 :root {
-  --bg: #0d0d0d;
-  --fg: #ffffff;
-  --muted: #bdbdbd;
-  --card: #161616;
-  --border: #222;
-  --radius: 16px;
-  --shadow: 0 8px 28px rgba(0,0,0,.4);
-  --accent: #e7e7e7;
-  --hover: #1d1d1d;
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #555;
+  --light: #f7f7f8;
+  --border: #e4e4e7;
+  --accent: #6366f1;
+  --radius: 12px;
+  --shadow: 0 4px 16px rgba(0,0,0,0.06);
 }
 
 * {
@@ -17,180 +16,131 @@
 }
 
 body {
+  font-family: "Inter", sans-serif;
   background: var(--bg);
-  color: var(--fg);
-  font-family: "Montserrat", sans-serif;
-  overflow-x: hidden;
+  color: var(--text);
+  padding: 28px 12px 60px;
+  line-height: 1.55;
 }
 
-/* -----------------------------------
-   ANIMATIONS GLOBAL 
------------------------------------ */
-
-.fade-in {
-  opacity: 0;
-  animation: fade 1s forwards ease-out;
-}
-
-@keyframes fade {
-  to { opacity: 1; }
-}
-
-.slide-up {
-  opacity: 0;
-  transform: translateY(18px);
-  animation: slideUp 0.7s forwards ease-out;
-}
-
-@keyframes slideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* -----------------------------------
-   HEADER 
------------------------------------ */
+/* ------------------ HEADER ------------------ */
 
 .hero {
-  padding: 50px 0 28px;
   text-align: center;
+  margin-bottom: 34px;
 }
 
-.title-anim {
-  font-size: 30px;
+.hero h1 {
+  font-size: 28px;
   font-weight: 800;
-  animation: pop 0.6s ease-out;
-}
-
-@keyframes pop {
-  0% { transform: scale(0.85); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
+  animation: fadeIn 0.6s ease-out;
 }
 
 .subtitle {
-  margin-top: 6px;
+  margin-top: 8px;
   font-size: 15px;
   color: var(--muted);
 }
 
-/* -----------------------------------
-   LAYOUT
------------------------------------ */
+/* ------------------ BLOCK SECTIONS ------------------ */
 
-.container {
-  max-width: 780px;
-  margin: 0 auto;
-  padding: 0 18px;
-}
-
-/* -----------------------------------
-   CARDS
------------------------------------ */
-
-.card {
-  background: var(--card);
-  border: 1px solid var(--border);
+.block {
+  background: var(--light);
+  padding: 22px 20px;
   border-radius: var(--radius);
-  padding: 24px 20px;
-  margin-bottom: 22px;
+  border: 1px solid var(--border);
+  margin-bottom: 26px;
   box-shadow: var(--shadow);
-  transition: transform .25s, background .25s;
+  animation: fadeUp 0.6s ease-out;
 }
 
-/* Hover effet premium */
-.card:hover {
-  transform: translateY(-3px);
-  background: var(--hover);
-}
-
-/* -----------------------------------
-   TITRES & TEXTE
------------------------------------ */
-
-h2 {
+.block h2 {
   font-size: 20px;
-  margin-bottom: 14px;
   font-weight: 700;
+  margin-bottom: 14px;
 }
 
-p, li, summary {
-  font-size: 15px;
-  line-height: 1.55;
-  color: var(--fg);
-}
-
-ul, ol {
+.block ul, .block ol {
   padding-left: 18px;
+  margin-top: 8px;
 }
 
-/* -----------------------------------
-   DETAILS 
------------------------------------ */
+.block li {
+  margin-bottom: 6px;
+}
+
+/* ------------------ DETAILS ------------------ */
+
+details {
+  background: #fff;
+  padding: 14px 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  margin: 10px 0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+details:hover {
+  border-color: var(--accent);
+}
 
 summary {
-  cursor: pointer;
-  padding: 6px 0;
   font-weight: 600;
-  color: var(--accent);
-  transition: .3s;
+  margin-bottom: 8px;
 }
 
-summary:hover {
-  opacity: .7;
-}
-
-/* -----------------------------------
-   PROMPTS
------------------------------------ */
+/* ------------------ PROMPTS ------------------ */
 
 pre.prompt {
-  background: #101010;
-  padding: 14px;
-  border-radius: 12px;
-  border: 1px solid #2a2a2a;
-  font-size: 14px;
-  white-space: pre-wrap;
-  margin-bottom: 12px;
-  transition: 0.3s;
-}
-
-pre.prompt:hover {
-  background: #151515;
-}
-
-/* -----------------------------------
-   BUTTONS 
------------------------------------ */
-
-.btn {
-  width: 100%;
-  padding: 12px 0;
-  margin-top: 4px;
-  border-radius: 12px;
+  background: var(--light);
   border: 1px solid var(--border);
-  background: #ffffff12;
-  color: var(--fg);
+  padding: 14px;
+  border-radius: var(--radius);
+  white-space: pre-wrap;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+/* ------------------ BUTTON ------------------ */
+
+.copy-btn {
+  width: 100%;
+  padding: 10px 0;
   font-size: 15px;
   font-weight: 600;
+  border-radius: var(--radius);
+  border: none;
+  background: var(--accent);
+  color: white;
   cursor: pointer;
-  transition: .25s;
+  transition: 0.2s;
 }
 
-.btn:hover {
-  background: #ffffff25;
+.copy-btn:hover {
+  opacity: 0.9;
 }
 
-.btn:active {
+.copy-btn:active {
   transform: scale(0.97);
 }
 
-/* -----------------------------------
-   GRID
------------------------------------ */
+/* ------------------ ANIMATIONS ------------------ */
 
-.grid {
-  display: grid;
-  gap: 20px;
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.fade-up {
+  animation: fadeUp 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeUp {
+  from {opacity: 0; transform: translateY(18px);}
+  to {opacity: 1; transform: translateY(0);}
 }
