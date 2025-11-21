@@ -2,10 +2,11 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
   <title>IA pour les cours — Guide pratique</title>
-  <link rel="stylesheet" href="styles.css" />
   <meta name="description" content="Guide précis et concret pour utiliser l'IA dans ses études : méthodes, prompts, limites, règles et bonnes pratiques." />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
@@ -18,7 +19,6 @@
 
   <main class="container">
 
-    <!-- Pourquoi -->
     <section id="why" class="card">
       <h2>📚 Pourquoi utiliser l'IA</h2>
       <ul>
@@ -32,7 +32,6 @@
       </ul>
     </section>
 
-    <!-- Limites de l'IA -->
     <section id="limits" class="card">
       <h2>🧱 Limites de l’IA</h2>
       <ul>
@@ -46,7 +45,6 @@
       </ul>
     </section>
 
-    <!-- Éthique -->
     <section id="rules" class="card">
       <h2>⚖️ Règles & éthique</h2>
       <ol>
@@ -58,7 +56,6 @@
       </ol>
     </section>
 
-    <!-- Prompts efficaces -->
     <section id="how" class="card">
       <h2>🛠️ Comment formuler un bon prompt</h2>
       <p>Modèle : contexte → tâche → format → contraintes.</p>
@@ -71,7 +68,6 @@ Contraintes : pas plus de 50 mots par point, niveau lycée.
       <button class="btn" data-copy="Contexte : Je suis en 2nde, thème = révolution industrielle.\nTâche : Résume en 6 points.\nFormat : bullet points, 1 phrase par point.\nContraintes : pas plus de 50 mots par point, niveau lycée.">Copier l'exemple</button>
     </section>
 
-    <!-- Templates -->
     <section id="templates" class="card">
       <h2>✍️ Templates rapides</h2>
 
@@ -83,7 +79,7 @@ Contraintes : pas plus de 50 mots par point, niveau lycée.
 
       <details>
         <summary>Plan pour un devoir</summary>
-        <pre class="prompt">Construit un plan détaillé (I/II/III + sous-parties) sur : "Les causes de la Première Guerre mondiale", niveau lycée.</pre>
+        <pre class="prompt">Construit un plan détaillé (I/II/III + sous-parties) sur : &quot;Les causes de la Première Guerre mondiale&quot;, niveau lycée.</pre>
         <button class="btn" data-copy="Construit un plan détaillé (I/II/III + sous-parties) sur : &quot;Les causes de la Première Guerre mondiale&quot;, niveau lycée.">Copier</button>
       </details>
 
@@ -95,12 +91,11 @@ Contraintes : pas plus de 50 mots par point, niveau lycée.
 
       <details>
         <summary>Simulation de contrôle</summary>
-        <pre class="prompt">Crée un mini-contrôle de 5 questions sur le thème "Les Lumières". À la fin, corrige mes réponses et explique mes erreurs.</pre>
+        <pre class="prompt">Crée un mini-contrôle de 5 questions sur le thème &quot;Les Lumières&quot;. À la fin, corrige mes réponses et explique mes erreurs.</pre>
         <button class="btn" data-copy="Crée un mini-contrôle de 5 questions sur le thème &quot;Les Lumières&quot;. À la fin, corrige mes réponses et explique mes erreurs.">Copier</button>
       </details>
     </section>
 
-    <!-- À faire / ne pas faire -->
     <section id="dosdonts" class="card">
       <h2>✅ / ❌ À faire / Ne pas faire</h2>
       <div class="grid">
@@ -125,7 +120,6 @@ Contraintes : pas plus de 50 mots par point, niveau lycée.
       </div>
     </section>
 
-    <!-- Exemples -->
     <section id="examples" class="card">
       <h2>🔬 Exemples utiles</h2>
       <p><strong>Prompt :</strong> “Explique la différence entre mitose et méiose en 6 lignes, niveau lycée.”</p>
@@ -144,6 +138,7 @@ Contraintes : pas plus de 50 mots par point, niveau lycée.
         <li>Adaptation et vérification = indispensables.</li>
       </ul>
     </section>
+
   </main>
 
   <script src="script.js"></script>
