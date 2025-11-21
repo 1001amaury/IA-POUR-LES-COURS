@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
-  <title>IA pour les cours — Guide pratique</title>
+  <title>Utiliser l'IA pour travailler — Le guide simple</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
@@ -13,130 +13,159 @@
 
   <header class="hero fade-in">
     <div class="container">
-      <h1 class="title-anim">🤖 IA pour les cours</h1>
-      <p class="subtitle">Méthodes, limites, prompts efficaces. Pas de triche.</p>
+      <h1 class="title-anim">🤖 L’IA pour t’aider en cours</h1>
+      <p class="subtitle">Pas pour tricher — juste pour comprendre plus vite et mieux bosser.</p>
     </div>
   </header>
 
   <main class="container">
 
-    <section id="why" class="card slide-up">
-      <h2>📚 Pourquoi utiliser l'IA</h2>
+    <!-- Pourquoi -->
+    <section class="card slide-up">
+      <h2>📚 À quoi ça sert vraiment</h2>
+      <p>
+        L’IA, ce n’est pas une “machine à réponses”.  
+        C’est surtout un outil pour t’expliquer les choses autrement.  
+      </p>
+
       <ul>
-        <li>Comprendre plus vite : explications claires, adaptées à ton niveau.</li>
-        <li>Gagner du temps : résumés, schémas, définitions, rappels essentiels.</li>
-        <li>Progresser : corrections, explications d’erreurs, exercices ciblés.</li>
-        <li>Structurer : plans, idées, argumentaires, transitions logiques.</li>
-        <li>S’entraîner : simulations de contrôles avec correction détaillée.</li>
-        <li>Clarifier : transformer un cours complexe en étapes simples.</li>
-        <li>Adapter : demander le style exact de ton prof (longueur, exigences, structure, notation).</li>
+        <li>Comprendre un chapitre que t’as pas suivi en classe.</li>
+        <li>Avoir des explications simples quand ton cours part dans tous les sens.</li>
+        <li>Te donner un plan de travail clair quand tu sais pas par où commencer.</li>
+        <li>S’entraîner avec des questions, et avoir la correction directe.</li>
+        <li>Te faire gagner du temps sur les résumés, définitions, fiches.</li>
       </ul>
+
+      <p style="margin-top:12px;">
+        Bref : ça t’aide, mais ça fait pas le travail à ta place.
+      </p>
     </section>
 
-    <section id="limits" class="card slide-up">
-      <h2>🧱 Limites de l’IA</h2>
+    <!-- Limites -->
+    <section class="card slide-up">
+      <h2>🧱 Les limites (importantes)</h2>
+
+      <p>L’IA peut être super utile… mais pas magique.</p>
+
       <ul>
-        <li><strong>Erreurs possibles</strong> : l’IA peut inventer des faits, se tromper en maths, simplifier à l’excès.</li>
-        <li><strong>Aucune connaissance interne de ton cours</strong> : elle ne connaît pas ce que ton prof exige réellement.</li>
-        <li><strong>Pas fiable pour les sujets pointus</strong> : dates exactes, citations précises, statistiques, calculs complexes.</li>
-        <li><strong>Peut donner un contenu trop général</strong> si tu donnes un prompt vague.</li>
-        <li><strong>Risque de plagiat involontaire</strong> si tu copies sans adapter.</li>
-        <li><strong>Mauvaise compréhension du contexte scolaire</strong> : notation, méthode, consignes spécifiques.</li>
-        <li><strong>Ne remplace pas la mémoire</strong> : lire une réponse ≠ comprendre ≠ retenir ≠ réussir l’examen.</li>
+        <li>Elle peut se tromper, parfois sur des détails bêtes.</li>
+        <li>Elle ne sait pas ce que veut ton prof exactement.</li>
+        <li>Elle simplifie parfois trop (ou pas assez).</li>
+        <li>Elle peut mélanger des dates, ou inventer des citations.</li>
+        <li>Si ton cours est particulier, elle ne peut pas le deviner.</li>
       </ul>
+
+      <p style="margin-top:12px;">
+        Donc : tu lis, tu vérifies, tu ajustes. Toujours.
+      </p>
     </section>
 
-    <section id="rules" class="card slide-up">
-      <h2>⚖️ Règles & éthique</h2>
+    <!-- Règles -->
+    <section class="card slide-up">
+      <h2>⚖️ Ce qui est ok / pas ok</h2>
+
       <ol>
-        <li>Tu peux utiliser l’IA pour apprendre, pas pour déléguer ton travail.</li>
-        <li>Tu dois toujours vérifier et corriger ce qu’elle produit.</li>
-        <li>Respecte les règles de ton établissement.</li>
-        <li>Ne donne aucune donnée personnelle.</li>
-        <li>Si tu t’appuies dessus pour un devoir, indique-le quand c’est nécessaire.</li>
+        <li>Utiliser l’IA pour comprendre → oui.</li>
+        <li>Copier-coller un devoir → non (et ça se voit direct).</li>
+        <li>Demander de l’aide pour t’entraîner → oui.</li>
+        <li>Donner des données perso → toujours non.</li>
+        <li>Adapter ce que l’IA te donne → indispensable.</li>
       </ol>
     </section>
 
-    <section id="how" class="card slide-up">
-      <h2>🛠️ Comment formuler un bon prompt</h2>
-      <p>Modèle : contexte → tâche → format → contraintes.</p>
+    <!-- Prompts -->
+    <section class="card slide-up">
+      <h2>🛠️ Comment demander un truc clair</h2>
+
+      <p>La base : expliquer ce que tu veux + comment tu veux la réponse.</p>
+
       <pre class="prompt">
-Contexte : Je suis en 2nde, thème = révolution industrielle.
-Tâche : Résume en 6 points.
-Format : bullet points, 1 phrase par point.
-Contraintes : pas plus de 50 mots par point, niveau lycée.
+Je suis en Seconde.  
+Chapitre : Révolution industrielle.  
+Fais-moi un résumé en 6 points clairs.  
+Une phrase par point, niveau lycée.
       </pre>
-      <button class="btn" data-copy="Contexte : Je suis en 2nde, thème = révolution industrielle.\nTâche : Résume en 6 points.\nFormat : bullet points, 1 phrase par point.\nContraintes : pas plus de 50 mots par point, niveau lycée.">Copier l'exemple</button>
+
+      <button class="btn" data-copy="Je suis en Seconde. Chapitre : Révolution industrielle. Fais-moi un résumé en 6 points clairs. Une phrase par point, niveau lycée.">Copier l'exemple</button>
     </section>
 
-    <section id="templates" class="card slide-up">
-      <h2>✍️ Templates rapides</h2>
+    <!-- Templates -->
+    <section class="card slide-up">
+      <h2>✍️ Modèles rapides</h2>
 
       <details>
-        <summary>Résumé de cours</summary>
-        <pre class="prompt">Résume ce texte en 5 idées clés, niveau lycée, 1 phrase par idée.</pre>
-        <button class="btn" data-copy="Résume ce texte en 5 idées clés, niveau lycée, 1 phrase par idée.">Copier</button>
+        <summary>Résumé</summary>
+        <pre class="prompt">Peux-tu résumer ce texte en 5 idées principales, en niveau lycée ?</pre>
+        <button class="btn" data-copy="Peux-tu résumer ce texte en 5 idées principales, en niveau lycée ?">Copier</button>
       </details>
 
       <details>
-        <summary>Plan pour un devoir</summary>
-        <pre class="prompt">Construit un plan détaillé (I/II/III + sous-parties) sur : &quot;Les causes de la Première Guerre mondiale&quot;, niveau lycée.</pre>
-        <button class="btn" data-copy="Construit un plan détaillé (I/II/III + sous-parties) sur : &quot;Les causes de la Première Guerre mondiale&quot;, niveau lycée.">Copier</button>
+        <summary>Plan de devoir</summary>
+        <pre class="prompt">Propose un plan détaillé (I / II / III + sous-parties) sur : "Les causes de la Première Guerre mondiale".</pre>
+        <button class="btn" data-copy="Propose un plan détaillé (I / II / III + sous-parties) sur : &quot;Les causes de la Première Guerre mondiale&quot;.">Copier</button>
       </details>
 
       <details>
-        <summary>Explication pas-à-pas (math)</summary>
-        <pre class="prompt">Explique la résolution de x² - 5x + 6 = 0 en détaillant chaque étape sans sauter de ligne logique.</pre>
-        <button class="btn" data-copy="Explique la résolution de x² - 5x + 6 = 0 en détaillant chaque étape sans sauter de ligne logique.">Copier</button>
+        <summary>Maths expliqué</summary>
+        <pre class="prompt">Explique comment résoudre x² - 5x + 6 = 0, étape par étape, sans sauter d’étapes.</pre>
+        <button class="btn" data-copy="Explique comment résoudre x² - 5x + 6 = 0, étape par étape, sans sauter d’étapes.">Copier</button>
       </details>
 
       <details>
-        <summary>Simulation de contrôle</summary>
-        <pre class="prompt">Crée un mini-contrôle de 5 questions sur le thème &quot;Les Lumières&quot;. À la fin, corrige mes réponses et explique mes erreurs.</pre>
-        <button class="btn" data-copy="Crée un mini-contrôle de 5 questions sur le thème &quot;Les Lumières&quot;. À la fin, corrige mes réponses et explique mes erreurs.">Copier</button>
+        <summary>Mini-contrôle</summary>
+        <pre class="prompt">Fais-moi un mini-contrôle de 5 questions sur le thème "Les Lumières" avec correction à la fin.</pre>
+        <button class="btn" data-copy="Fais-moi un mini-contrôle de 5 questions sur le thème &quot;Les Lumières&quot; avec correction à la fin.">Copier</button>
       </details>
     </section>
 
-    <section id="dosdonts" class="card slide-up">
-      <h2>✅ / ❌ À faire / Ne pas faire</h2>
+    <!-- Do / Don't -->
+    <section class="card slide-up">
+      <h2>✅ / ❌ À faire / À éviter</h2>
+
       <div class="grid">
         <div>
-          <h3>✅ Faire</h3>
+          <h3>À faire</h3>
           <ul>
-            <li>Relire, corriger, compléter.</li>
-            <li>Adapter au vocabulaire du cours.</li>
-            <li>Demander un niveau précis : collège, lycée, spé, bac.</li>
-            <li>Demander des explications alternatives si tu ne comprends pas.</li>
+            <li>Reformuler avec tes mots.</li>
+            <li>Vérifier les infos importantes.</li>
+            <li>Donner ton niveau scolaire.</li>
+            <li>Demander d’autres explications si tu bloques.</li>
           </ul>
         </div>
+
         <div>
-          <h3>❌ Ne pas faire</h3>
+          <h3>À éviter</h3>
           <ul>
-            <li>Copier-coller sans réflexion.</li>
-            <li>Demander des réponses aux évaluations.</li>
-            <li>Envoyer des infos personnelles.</li>
-            <li>Penser que l’IA est toujours correcte.</li>
+            <li>Copier tel quel.</li>
+            <li>Demander les réponses d’un contrôle.</li>
+            <li>Envoyer des données personnelles.</li>
+            <li>Faire confiance les yeux fermés.</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section id="examples" class="card slide-up">
-      <h2>🔬 Exemples utiles</h2>
-      <p><strong>Prompt :</strong> “Explique la différence entre mitose et méiose en 6 lignes, niveau lycée.”</p>
+    <!-- Exemples -->
+    <section class="card slide-up">
+      <h2>🔬 Exemple d'utilisation</h2>
+
+      <p><strong>Demande :</strong> “Explique la différence entre mitose et méiose en 5-6 lignes.”</p>
+
       <ul>
-        <li><strong>Avant :</strong> relire ton cours.</li>
-        <li><strong>Pendant :</strong> poser une question précise.</li>
-        <li><strong>Après :</strong> vérifier chaque point et ajouter schémas, formules, exemples.</li>
+        <li><strong>Avant :</strong> relecture du cours.</li>
+        <li><strong>Pendant :</strong> question précise.</li>
+        <li><strong>Après :</strong> vérification + ajout de schémas.</li>
       </ul>
     </section>
 
-    <section id="footer" class="card small slide-up">
-      <h2>📎 Notes rapides</h2>
+    <!-- Notes -->
+    <section class="card slide-up small">
+      <h2>📎 Rappels</h2>
+
       <ul>
-        <li>L’IA est un outil, pas une garantie.</li>
-        <li>Comprendre > recopier.</li>
-        <li>Adaptation et vérification = indispensables.</li>
+        <li>L’IA est un support, pas une solution miracle.</li>
+        <li>Comprendre reste 100% nécessaire.</li>
+        <li>Une réponse claire ne remplace pas l’apprentissage.</li>
       </ul>
     </section>
 
