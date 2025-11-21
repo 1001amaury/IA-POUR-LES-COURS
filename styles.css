@@ -1,14 +1,125 @@
-:root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#7cc0ff}
-*{box-sizing:border-box}
-body{margin:0;font-family:Inter,system-ui,Arial;background:linear-gradient(180deg,#071024 0%, #071428 100%);color:#e6eef6;line-height:1.4}
-.container{max-width:900px;margin:24px auto;padding:0 16px}
-.hero{padding:28px 0;text-align:center}
-h1{margin:0;font-size:28px}
-.subtitle{color:var(--muted);margin-top:6px}
-.card{background:rgba(255,255,255,0.02);padding:18px;border-radius:10px;margin:16px 0;border:1px solid rgba(255,255,255,0.03)}
-.prompt{background:rgba(0,0,0,0.25);padding:10px;border-radius:6px;white-space:pre-wrap;color:#dbeafe}
-.btn{margin-top:8px;padding:8px 10px;border:0;background:var(--accent);color:#022;border-radius:6px;cursor:pointer}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.small{font-size:14px;color:var(--muted)}
-details summary{cursor:pointer;padding:8px 0}
-@media(max-width:700px){.grid{grid-template-columns:1fr}}
+:root {
+  --bg: #0b0b0b;
+  --fg: #ffffff;
+  --muted: #bdbdbd;
+  --card: #141414;
+  --border: #242424;
+  --radius: 14px;
+  --shadow: 0 10px 24px rgba(0,0,0,.35);
+  --accent: #e7e7e7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Montserrat", sans-serif;
+}
+
+/* ---------- HEADER ---------- */
+.hero {
+  padding: 48px 0 32px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.subtitle {
+  margin-top: 8px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+/* ---------- GLOBAL LAYOUT ---------- */
+.container {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ---------- CARDS ---------- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 18px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+}
+
+.card.small {
+  padding: 18px;
+}
+
+/* ---------- TITLES ---------- */
+h2 {
+  font-size: 20px;
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+
+/* ---------- TEXT ---------- */
+p, li, summary {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--fg);
+}
+
+ul, ol {
+  padding-left: 18px;
+}
+
+summary {
+  cursor: pointer;
+  padding: 6px 0;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* ---------- GRID ---------- */
+.grid {
+  display: grid;
+  gap: 18px;
+}
+
+/* ---------- PRE (PROMPTS) ---------- */
+pre.prompt {
+  background: #0f0f0f;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #2a2a2a;
+  font-size: 14px;
+  white-space: pre-wrap;
+  margin-bottom: 12px;
+}
+
+/* ---------- BUTTON ---------- */
+.btn {
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #ffffff10;
+  color: var(--fg);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn:hover {
+  background: #ffffff20;
+}
